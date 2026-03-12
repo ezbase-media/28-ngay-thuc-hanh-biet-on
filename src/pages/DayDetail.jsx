@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { daysData } from '../data/days';
-import { ArrowLeft, Save, Heart, BookOpen } from 'lucide-react';
+import { ArrowLeft, Save, Heart, BookOpen, Clock } from 'lucide-react';
 import UploadPhotoAndWrite from '../components/SpecialTasks/UploadPhotoAndWrite';
+import { getDayData, saveDayData, getActiveCycle } from '../utils/storage';
 
 const renderInstruction = (text) => {
   if (!text) return null;
@@ -29,20 +30,27 @@ const DayDetail = () => {
   const navigate = useNavigate();
   const day = daysData.find(d => d.id === parseInt(id));
   
-  const storageKey = `gratitude_day_${id}`;
+  const cycleId = getActiveCycle();
   const [content, setContent] = useState('');
+  const [timestamp, setTimestamp] = useState(null);
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
-    const savedData = localStorage.getItem(storageKey);
-    if (savedData) {
-      setContent(savedData);
+    const dayData = getDayData(cycleId, id);
+    if (dayData) {
+      setContent(dayData.content);
+      setTimestamp(dayData.timestamp);
+    } else {
+      setContent('');
+      setTimestamp(null);
     }
-  }, [storageKey]);
+  }, [cycleId, id]);
 
   const handleSave = () => {
-    localStorage.setItem(storageKey, content);
+    saveDayData(cycleId, id, content);
     setIsSaved(true);
+    const updatedData = getDayData(cycleId, id);
+    if (updatedData) setTimestamp(updatedData.timestamp);
     setTimeout(() => setIsSaved(false), 3000);
   };
 
@@ -94,6 +102,12 @@ const DayDetail = () => {
             }}
           ></textarea>
         </div>
+        {timestamp && (
+          <div className="mt-3 flex items-center text-warm-400 text-sm italic ml-2">
+            <Clock size={14} className="mr-1" />
+            Lần cập nhật cuối: {new Date(timestamp).toLocaleDateString('vi-VN')} lúc {new Date(timestamp).toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'})}
+          </div>
+        )}
       </div>
 
       <div className="flex flex-col sm:flex-row items-center justify-between mt-8 pt-6 border-t border-warm-100">

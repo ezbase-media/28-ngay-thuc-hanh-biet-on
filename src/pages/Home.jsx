@@ -1,23 +1,72 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { daysData } from '../data/days';
 import { BookHeart, CheckCircle2 } from 'lucide-react';
+import { initStorage, getCycles, getActiveCycle, setActiveCycle, createNewCycle, getDayData } from '../utils/storage';
 
 const Home = () => {
+  const [cycles, setCycles] = useState([]);
+  const [activeCycleId, setActiveCycleId] = useState(1);
+
+  useEffect(() => {
+    initStorage();
+    setCycles(getCycles());
+    setActiveCycleId(getActiveCycle());
+  }, []);
+
+  const handleCycleChange = (e) => {
+    const newId = parseInt(e.target.value);
+    setActiveCycle(newId);
+    setActiveCycleId(newId);
+  };
+
+  const handleNewCycle = () => {
+    if (window.confirm("Bạn muốn bắt đầu một hành trình 28 ngày mới? (Hành trình cũ vẫn được lưu lại)")) {
+      const newId = createNewCycle();
+      setCycles(getCycles());
+      setActiveCycleId(newId);
+    }
+  };
+
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <h2 className="text-2xl font-serif text-warm-700 mb-4">Hành Trình Thực Hành Lòng Biết Ơn</h2>
-        <p className="text-warm-600 leading-relaxed">
+        <p className="text-warm-600 leading-relaxed mb-6">
           Mỗi ngày là một cơ hội để nhận ra những phép màu xung quanh ta. Hãy chọn một ngày để bắt đầu viết xuống những điều khiến bạn cảm thấy hạnh phúc và biết ơn.
         </p>
+        
+        {cycles.length > 0 && (
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-warm-100 sm:inline-flex">
+            <select 
+              value={activeCycleId} 
+              onChange={handleCycleChange}
+              className="bg-warm-50 border border-warm-200 text-warm-700 text-sm rounded-lg focus:ring-warm-400 focus:border-warm-400 block p-2.5 outline-none font-medium cursor-pointer"
+            >
+              {cycles.map(c => (
+                <option key={c.id} value={c.id}>{c.name}</option>
+              ))}
+            </select>
+            <button 
+              onClick={handleNewCycle}
+              className="text-sm bg-pastel-darkgreen/10 text-pastel-darkgreen hover:bg-pastel-darkgreen/20 px-4 py-2.5 rounded-lg font-medium transition-colors"
+            >
+              + Hành trình mới
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {daysData.map((day) => {
-          // Check if user has saved data for this day
-          const savedData = localStorage.getItem(`gratitude_day_${day.id}`);
-          const isCompleted = savedData && savedData.trim().length > 0;
+          const dayData = getDayData(activeCycleId, day.id);
+          const isCompleted = dayData && dayData.content.trim().length > 0;
+          
+          let dateStr = '';
+          if (isCompleted && dayData.timestamp) {
+             const d = new Date(dayData.timestamp);
+             dateStr = d.toLocaleDateString('vi-VN') + ' ' + d.toLocaleTimeString('vi-VN', {hour: '2-digit', minute:'2-digit'});
+          }
 
           return (
             <Link 
@@ -32,7 +81,10 @@ const Home = () => {
                   <BookHeart size={24} strokeWidth={1.5} />
                 </div>
                 {isCompleted && (
-                  <CheckCircle2 size={20} className="text-pastel-darkgreen" />
+                  <div className="flex flex-col items-end">
+                    <CheckCircle2 size={20} className="text-pastel-darkgreen mb-1" />
+                    <span className="text-[10px] text-warm-400 font-medium">{dateStr}</span>
+                  </div>
                 )}
               </div>
               
