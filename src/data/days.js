@@ -39,9 +39,10 @@ export const daysData = [
     title: 'NGÀY 5 - TIỀN BẠC NHIỆM MÀU', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết, nói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nvà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Dành vài phút để nghĩ**\nVề tuổi thơ của mình, về tất cả những thứ mình đã được nhận, hoàn toàn miễn phí.\nNhớ lại những kí ức mà ở đó, tiền bạc được người khác chi trả giúp bạn.\nBằng cả tấm lòng hãy nói từ nhiệm màu **Cảm Ơn** đối với mỗi kỉ niệm ấy.\n\n**3. Lấy một mẩu giấy dán vào tờ tiền với nội dung:**\n*"Cảm Ơn Tất Cả Những Khoản Tiền Tôi Nhận Được Trong Cuộc Sống"*\nMang theo tờ Tiền Nhiệm Màu trong ngày hôm nay, ít nhất 2 lần buổi sáng và buổi chiều, cầm tờ tiền trong tay và đọc những dòng bạn viết với Lòng Biết Ơn chân thành dành cho sự đủ đầy về tiền bạc mà bạn đã nhận được.\nSau ngày hôm nay, hãy đặt Tờ Tiền Nhiệm Màu ở nơi bạn có thể nhìn thấy thường xuyên mỗi ngày\n\n**4. Trước khi đi ngủ, Hòn Đá Nhiệm Màu trong tay và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
     specialTask: {
-      title: 'Tờ Tiền Nhiệm Màu',
+      title: 'Tiền Bạc Nhiệm Màu',
       fields: [
-        { id: 'moneyPhoto', type: 'photo', label: 'Tải ảnh Tờ Tiền Nhiệm Màu của bạn lên đây để lưu trữ (Không bắt buộc)' }
+        { id: 'childhoodMemories', type: 'textarea', label: 'Biết ơn tuổi thơ (Những ký ức mà bạn được người khác chi trả tiền bạc):', placeholder: 'Cảm ơn vì tuổi thơ của tôi đã được...' },
+        { id: 'moneyPhoto', type: 'photo', label: 'Tải ảnh Tờ Tiền Nhiệm Màu của bạn lên đây (Không bắt buộc)' }
       ]
     }
   },
