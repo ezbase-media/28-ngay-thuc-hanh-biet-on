@@ -24,7 +24,7 @@ function App() {
       </main>
       
       <footer className="mt-12 py-8 text-center text-warm-500 text-sm border-t border-warm-200 bg-warm-100/30">
-        <p>Hành trình 28 ngày phép màu &copy; {new Date().getFullYear()}</p>
+        <p>Hành trình 28 ngày phép màu &copy; {new Date().getFullYear()} by Lou</p>
         <p className="text-warm-400 text-xs mt-1">Thực hành lòng biết ơn mỗi ngày để thu hút điều tốt đẹp</p>
       </footer>
     </div>
