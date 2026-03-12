@@ -60,14 +60,14 @@ const Home = () => {
             </select>
             <button 
               onClick={handleNewCycle}
-              className="text-sm bg-pastel-darkgreen text-white hover:bg-pastel-darkgreen/90 px-3 py-2 rounded-lg font-medium transition-colors whitespace-nowrap shadow-sm"
+              className="text-sm bg-warm-200 text-warm-700 hover:bg-warm-300 px-3 py-2 rounded-lg font-medium transition-colors whitespace-nowrap shadow-sm"
             >
               + Hành trình mới
             </button>
             <button
               onClick={handleDeleteCycle}
               title="Xóa hành trình này"
-              className="text-red-400 hover:text-red-600 hover:bg-red-50 p-2 rounded-lg transition-colors ml-1"
+              className="text-warm-400 hover:text-warm-600 hover:bg-warm-100 p-2 rounded-lg transition-colors ml-1"
             >
               <Trash2 size={18} />
             </button>
