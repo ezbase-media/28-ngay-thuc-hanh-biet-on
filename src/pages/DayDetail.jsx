@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { daysData } from '../data/days';
 import { ArrowLeft, Save, Heart, BookOpen, Clock } from 'lucide-react';
-import UploadPhotoAndWrite from '../components/SpecialTasks/UploadPhotoAndWrite';
+import SpecialTaskBuilder from '../components/SpecialTasks/SpecialTaskBuilder';
 import { getDayData, saveDayData, getActiveCycle } from '../utils/storage';
 
 const renderInstruction = (text) => {
@@ -79,8 +79,8 @@ const DayDetail = () => {
         </div>
       </header>
 
-      {day.specialTask === 'upload_photo_and_write' && (
-        <UploadPhotoAndWrite dayId={day.id} />
+      {day.specialTask && typeof day.specialTask === 'object' && (
+        <SpecialTaskBuilder config={day.specialTask} dayId={day.id} />
       )}
 
       <div className="mb-8 relative group">

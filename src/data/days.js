@@ -18,7 +18,13 @@ export const daysData = [
     day: 3,
     title: 'NGÀY 3 - MỐI QUAN HỆ NHIỆM MÀU', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Tìm 03 mối quan hệ thân thiết và hình ảnh của từng người để thực thi lòng biết ơn,**\nCảm nhận sự kì diệu của Mối Quan Hệ Nhiệm Màu\nĐặt bức ảnh của họ trước mặt mình và\nViết ra 05 điều bạn cảm thấy biết ơn nhất về mỗi người\nBắt đầu mỗi câu với từ nhiệm màu **Cảm Ơn** cùng với tên người đó và điều cụ thể bạn cảm thấy biết ơn họ.\nMang theo bức ảnh trong ngày hôm nay, hoặc đặt nó ở vị trí bạn dễ dàng nhìn thấy trong ngày, ít nhất 03 lần, hãy nhìn hình của họ - trực tiếp gọi tên họ - nói với họ từ nhiệm màu **Cảm Ơn** để thể hiện lòng biết ơn của mình đối với họ một cách chân thành nhất có thể.\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu trong tay và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.',
-    specialTask: 'upload_photo_and_write'
+    specialTask: {
+      title: 'Mối Quan Hệ Nhiệm Màu',
+      fields: [
+        { id: 'relPhoto', type: 'photo', label: 'Tải ảnh 3 người thân thiết của bạn lên đây để lưu trữ (Không bắt buộc)' },
+        { id: 'relReasons', type: 'textarea', label: 'Viết ra 5 điều bạn cảm thấy biết ơn nhất về mỗi người:', placeholder: 'Cảm ơn [Tên] vì...' }
+      ]
+    }
   },
   { 
     id: 4, 
@@ -32,7 +38,12 @@ export const daysData = [
     day: 5, 
     title: 'NGÀY 5 - TIỀN BẠC NHIỆM MÀU', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết, nói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nvà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Dành vài phút để nghĩ**\nVề tuổi thơ của mình, về tất cả những thứ mình đã được nhận, hoàn toàn miễn phí.\nNhớ lại những kí ức mà ở đó, tiền bạc được người khác chi trả giúp bạn.\nBằng cả tấm lòng hãy nói từ nhiệm màu **Cảm Ơn** đối với mỗi kỉ niệm ấy.\n\n**3. Lấy một mẩu giấy dán vào tờ tiền với nội dung:**\n*"Cảm Ơn Tất Cả Những Khoản Tiền Tôi Nhận Được Trong Cuộc Sống"*\nMang theo tờ Tiền Nhiệm Màu trong ngày hôm nay, ít nhất 2 lần buổi sáng và buổi chiều, cầm tờ tiền trong tay và đọc những dòng bạn viết với Lòng Biết Ơn chân thành dành cho sự đủ đầy về tiền bạc mà bạn đã nhận được.\nSau ngày hôm nay, hãy đặt Tờ Tiền Nhiệm Màu ở nơi bạn có thể nhìn thấy thường xuyên mỗi ngày\n\n**4. Trước khi đi ngủ, Hòn Đá Nhiệm Màu trong tay và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Tờ Tiền Nhiệm Màu',
+      fields: [
+        { id: 'moneyPhoto', type: 'photo', label: 'Tải ảnh Tờ Tiền Nhiệm Màu của bạn lên đây để lưu trữ (Không bắt buộc)' }
+      ]
+    }
   },
   { 
     id: 6, 
@@ -46,7 +57,13 @@ export const daysData = [
     day: 7, 
     title: 'NGÀY 7 - CÁNH CỬA THOÁT KHỎI SỰ TIÊU CỰC', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời: **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Chọn một vấn đề / tình huống tiêu cực trong cuộc sống mà bạn muốn giải quyết**\nLiệt kê 10 điều bạn cảm thấy biết ơn vì tình huống tiêu cực ấy. Bên dưới danh sách, hãy viết:\n*"Cảm ơn, cảm ơn, cảm ơn\nvì đã cho tôi thấy giải pháp hoàn hảo"*\n\n**3. Cam kết trong suốt ngày hôm nay bạn sẽ không nghĩ và nói bất cứ điều gì tiêu cực.**\nKhi lỡ phá vỡ cam kết, hãy dừng lại ngay và nói:\n*"Nhưng tôi phải nói rằng mình cảm thấy rất biết ơn vì... đã giúp tôi...,\nCảm ơn, cảm ơn, cảm ơn"*\n\n**4. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Cánh Cửa Thoát Khỏi Sự Tiêu Cực',
+      fields: [
+        { id: 'negativeIssue', type: 'textarea', label: '1. Vấn đề / tình huống tiêu cực cần giải quyết:', placeholder: 'Viết ra vấn đề bạn đang đối mặt...' },
+        { id: 'positiveReasons', type: 'list', count: 10, label: '2. Liệt kê 10 điều bạn cảm thấy biết ơn vì tình huống này:' }
+      ]
+    }
   },
   { 
     id: 8, 
@@ -81,14 +98,27 @@ export const daysData = [
     day: 12, 
     title: 'NGÀY 12 - NHỮNG CON NGƯỜI NHIỆM MÀU ĐÃ THAY ĐỔI CUỘC ĐỜI BẠN', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó.\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Tìm ra 03 Người Nhiệm Màu Đã Thay Đổi Cuộc Sống Của Bạn**\n\nTrong một không gian tĩnh lặng,\nHãy nhớ đến 03 con người nhiệm màu đã xuất hiện trong cuộc đời bạn.\nChia sẻ lần lượt với từng người một như thể họ đang có mặt cùng bạn lí do tại sao bạn biết ơn họ,\nNhờ họ mà cuộc sống của bạn đã thay đổi như thế nào.\n\nNói lời **Cảm Ơn** đến từng con người nhiệm màu ấy bằng tất cả những rung động từ sâu trong trái tim tràn ngập Lòng Biết Ơn.\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu trong tay và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Người Nhiệm Màu Đã Thay Đổi Cuộc Đời Bạn',
+      fields: [
+        { id: 'magicPerson1', type: 'textarea', label: 'Người nhiệm màu thứ 1 (Tên & Lý do biết ơn):', placeholder: 'Biết ơn bạn... vì đã...' },
+        { id: 'magicPerson2', type: 'textarea', label: 'Người nhiệm màu thứ 2 (Tên & Lý do biết ơn):', placeholder: 'Biết ơn bạn... vì đã...' },
+        { id: 'magicPerson3', type: 'textarea', label: 'Người nhiệm màu thứ 3 (Tên & Lý do biết ơn):', placeholder: 'Biết ơn bạn... vì đã...' }
+      ]
+    }
   },
   { 
     id: 13, 
     day: 13, 
     title: 'NGÀY 13 - HIỆN THỰC HÓA MỌI MƠ ƯỚC', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Viết ra danh sách 10 điều mong muốn.**\nViết *Cảm Ơn, Cảm Ơn, Cảm Ơn* trước mỗi điều mong muốn như thể bạn đã nhận được.\nDùng trí tưởng tượng của bạn để trả lời 3 câu hỏi:\n*Cảm xúc của bạn khi nhận được điều mình mong muốn?*\n*Ai là người bạn báo tin đầu tiên và bạn sẽ nói gì với họ?*\n*Điều tuyệt vời bạn làm sau khi có được mong muốn là gì?*\nĐọc lại những mong muốn ấy, cảm nhận sâu sắc những rung động khi nói từ nhiệm màu **Cảm Ơn**\n\n**2\'. Sáng tạo một tấm Bảng Nhiệm Màu**\nChuẩn bị một tấm bảng với hình ảnh, câu chữ được sưu tầm, cắt ghép... Thể hiện những mong muốn và đặt ở nơi thường xuyên nhìn thấy.\nĐặt tiêu đề cho tấm bảng là **"Cảm Ơn, Cảm Ơn, Cảm Ơn"** với cỡ chữ lớn ở đầu bảng.\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu trong tay và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Hiển Thực Hóa Mọi Mơ Ước',
+      fields: [
+        { id: 'topDreams', type: 'list', count: 10, label: 'Danh sách 10 điều mong muốn:' },
+        { id: 'visionBoardPhoto', type: 'photo', label: 'Ảnh Tấm Bảng Nhiệm Màu của bạn (Tùy chọn)' }
+      ]
+    }
   },
   { 
     id: 14, 
@@ -102,14 +132,27 @@ export const daysData = [
     day: 15, 
     title: 'NGÀY 15 - PHÉP MÀU CẢI THIỆN MỐI QUAN HỆ', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Phương pháp nhiệm màu cải thiện mối quan hệ**\n\nChọn một mối quan hệ khó khăn hay đổ vỡ mà bạn muốn cải thiện\n\nNgồi xuống và liệt kê danh sách 10 điều mà bạn cảm thấy biết ơn về người ấy\nHãy viết theo cấu trúc:\n\n*Tên người ấy ..., tôi chân thành biết ơn ... vì điều gì đó?\nCảm ơn, Cảm ơn, Cảm ơn*\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu và nghĩ về những Điều Tốt Đẹp đã xảy ra**\n\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Phép Màu Cải Thiện Mối Quan Hệ',
+      fields: [
+        { id: 'relationshipIssue', type: 'textarea', label: 'Tên người có mối quan hệ cần cải thiện:', placeholder: 'Ví dụ: Cảm ơn chồng/vợ tôi vì...' },
+        { id: 'relationshipReasons', type: 'list', count: 10, label: '10 điều bạn cảm thấy biết ơn về người ấy:' }
+      ]
+    }
   },
   { 
     id: 16, 
     day: 16, 
     title: 'NGÀY 16 - PHÉP MÀU VÀ ĐIỀU KỲ DIỆU CỦA SỨC KHỎE', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Biết ơn Sức Khỏe bạn đã nhận được trong quá khứ**\nHãy nhớ lại 03 thời điểm bạn cảm thấy tuyệt vời và nói từ nhiệm màu **Cảm Ơn**.\nCảm nhận lòng biết ơn đối với những thời điểm đó.\n\n**2\'. Biết ơn Sức Khỏe bạn đang nhận được trong hiện tại**\nHãy chọn 05 bộ phận trong cơ thể đang hoạt động tốt\nLần lượt nói từ nhiệm màu **Cảm Ơn** cho từng bộ phận trong tâm trí và Cảm nhận lòng biết ơn chân thành đối với những bộ phận ấy\n\n**2\'\'. Biết Ơn sức Khỏe bạn muốn có trong tương lai**\nChọn 01 điều về cơ thể mà bạn muốn cải thiện\nDành 01 phút để hình dung ra bản thân đang có được trạng thái sức khỏe lý tưởng ấy, nói từ nhiệm màu **Cảm Ơn** và Cảm nhận lòng biết ơn sâu sắc đối với những cải thiện tốt đẹp ngoài sức tưởng tượng ấy.\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu trong tay và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Điều Kỳ Diệu Của Sức Khỏe',
+      fields: [
+        { id: 'pastHealth', type: 'list', count: 3, label: '3 thời điểm bạn cảm thấy tuyệt vời trong MỘT QUÁ KHỨ:' },
+        { id: 'presentHealth', type: 'list', count: 5, label: '5 bộ phận trong cơ thể đang hoạt động tốt ở HIỆN TẠI:' },
+        { id: 'futureHealth', type: 'textarea', label: '1 điều về cơ thể mà bạn muốn cải thiện trong TƯƠNG LAI:', placeholder: 'Viết ra điều bạn mong muốn sức khỏe của mình đạt được...' }
+      ]
+    }
   },
   { 
     id: 17, 
@@ -123,7 +166,13 @@ export const daysData = [
     day: 18, 
     title: 'NGÀY 18 - DANH SÁCH NHIỆM MÀU', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nnói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nvà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Lập Danh sách nhiệm màu**\n\nHãy viết ra danh sách những điều quan trọng nhất bạn muốn thực hiện hay giải quyết.\n\nChọn ra 03 việc quan trọng nhất để tập trung, lần lượt tưởng tượng mỗi việc đã được giúp thực hiện hay giải quyết xong.\n\nDành ít nhất một phút cho mỗi việc, tin tưởng rằng nó đã được thực hiện và thể hiện Lòng Biết Ơn thật nhiều để đáp lại\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu trong tay và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Danh Sách Nhiệm Màu',
+      fields: [
+        { id: 'todoList', type: 'textarea', label: 'Danh sách những điều quan trọng nhất muốn thực hiện/giải quyết:', placeholder: 'Cần giải quyết nợ nần, dự án X...' },
+        { id: 'topThreeTodos', type: 'list', count: 3, label: '3 công việc quan trọng nhất cần tập trung giải quyết:' }
+      ]
+    }
   },
   { 
     id: 19, 
@@ -144,7 +193,12 @@ export const daysData = [
     day: 21, 
     title: 'NGÀY 21 - KẾT QUẢ TUYỆT DIỆU', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Cảm Ơn Vì Kết Quả Tuyệt Diệu**\n\nVào đầu ngày, viết ra danh sách 03 sự việc hoặc tình huống quan trọng bạn muốn có kết quả tuyệt diệu.\nHãy viết như thể bạn đang viết sau khi nó đã xảy ra cùng câu: *Cảm Ơn Vì Kết Quả Tuyệt Diệu!*\n\nTrong ngày, khi có sự việc bất ngờ phát sinh hãy sử dụng sức mạnh nhiệm màu của lòng biết ơn để có kết quả tuyệt diệu.\nMỗi lần như thế, hãy nhắm mắt lại, nói thầm và cảm nhận câu: *Cảm Ơn Vì Kết Quả Tuyệt Diệu!*\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu và nghĩ về những Điều Tốt Đẹp đã xảy ra**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Kết Quả Tuyệt Diệu',
+      fields: [
+        { id: 'excellentResults', type: 'list', count: 3, label: '3 sự việc hoặc tình huống bạn muốn có kết quả tuyệt diệu hôm nay (Viết như đã xảy ra):' }
+      ]
+    }
   },
   { 
     id: 22, 
@@ -165,21 +219,38 @@ export const daysData = [
     day: 24, 
     title: 'NGÀY 24 - CHIẾC ĐŨA PHÉP', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Chiếc Đũa Phép**\nChọn 03 người mà bạn yêu quý, đang thiếu thốn sức khỏe, tiền tài, hạnh phúc hoặc cả ba.\n*(Tìm một tấm ảnh của mỗi người và để nó trước mặt khi thực hiện phương pháp này nếu có thể )*\n\nThực hiện lần lượt từng người một như sau:\nCầm trên tay tấm ảnh của họ,\nnhắm mắt lại và trong vòng một phút hãy hình dung bạn nhận được tin rằng người đó đã có được điều họ muốn.\nMở mắt ra, và trong khi vẫn cầm tấm ảnh trên tay hãy nói:\n\n*"Cảm Ơn, Cảm Ơn, Cảm Ơn vì tên người đó đã có sức khỏe, tiền tài và hạnh phúc"*\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu trong tay và nghĩ về những Điều Tốt Đẹp đã xảy ra trong ngày.**\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: 'upload_photo_and_write' 
+    specialTask: {
+      title: 'Chiếc Đũa Phép',
+      fields: [
+        { id: 'wandPhoto', type: 'photo', label: 'Tải ảnh 3 người bạn muốn sử dụng chiếc đũa phép lên đây (Không bắt buộc)' },
+        { id: 'wandWishes', type: 'textarea', label: 'Lời chúc sức khỏe, tiền tài và hạnh phúc cho họ:', placeholder: 'Cảm ơn, cảm ơn, cảm ơn vì [Tên] đã có...' }
+      ]
+    }
   },
   { 
     id: 25, 
     day: 25, 
     title: 'NGÀY 25 - GỢI Ý NHIỆM MÀU', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\n\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Gợi Ý Nhiệm Màu**\n\nHãy tỉnh thức, sáng suốt để quan sát xung quanh và nhận ra ít nhất 07 gợi ý nhiệm màu trong ngày vũ trụ dành cho bạn.\n\nCảm nhận và nói từ nhiệm màu **Cảm Ơn** chân thành đối với mỗi gợi ý nhiệm màu ấy\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu và nghĩ về những Điều Tốt Đẹp đã xảy ra**\n\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Gợi Ý Nhiệm Màu',
+      fields: [
+        { id: 'magicHints', type: 'list', count: 7, label: '7 gợi ý nhiệm màu bạn nhận ra trong ngày hôm nay:' }
+      ]
+    }
   },
   { 
     id: 26, 
     day: 26, 
     title: 'NGÀY 26 - PHÉP MÀU BIẾN LỖI LẦM THÀNH HẠNH PHÚC', 
     instruction: '**1. Lập Danh Sách 10 Điều Bạn Cảm Thấy Biết Ơn**\n\nBuổi sáng - Viết vào sổ 10 điều bạn cảm thấy biết ơn\nViết ra lí do vì sao bạn biết ơn điều đó\nĐọc lại những điều đã viết,\nNói lời **Cảm ơn! Cảm ơn! Cảm Ơn**\nVà đặt tay lên trái tim mình cảm nhận tất cả.\n\n**2. Phép Màu Biến Lỗi Lầm Thành Hạnh Phúc**\n\nChọn 01 lỗi lầm bạn mắc phải trong cuộc sống\n\nTìm và viết 10 điều hạnh phúc là kết quả của sai lầm đó khiến bạn cảm thấy biết ơn\n\nĐể tìm kiếm những điều hạnh phúc dễ dàng hơn, bạn có thể tự hỏi: *Tôi học được gì từ sai lầm này? Sai lầm này mang đến điều tốt đẹp gì?*\n\n**3. Trước khi đi ngủ, cầm Hòn Đá Nhiệm Màu và nghĩ về những Điều Tốt Đẹp đã xảy ra**\n\nNói ra từ nhiệm màu: **Cảm Ơn** với điều tốt đẹp nhất và cảm nhận những rung động ngay trái tim mình.', 
-    specialTask: null 
+    specialTask: {
+      title: 'Phép Màu Biến Lỗi Lầm Thành Hạnh Phúc',
+      fields: [
+        { id: 'theMistake', type: 'textarea', label: 'Lỗi lầm mắc phải:', placeholder: 'Ghi vắn tắt lỗi lầm bạn đã mắc phải...' },
+        { id: 'mistakeLessons', type: 'list', count: 10, label: '10 điều hạnh phúc/bài học nhận ra từ lỗi lầm đó:' }
+      ]
+    }
   },
   { 
     id: 27, 
