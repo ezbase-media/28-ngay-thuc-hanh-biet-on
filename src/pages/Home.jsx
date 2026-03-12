@@ -48,11 +48,11 @@ const Home = () => {
         </p>
         
         {cycles.length > 0 && (
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-warm-100 sm:inline-flex relative">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 bg-white/60 p-2 sm:p-3 rounded-2xl shadow-sm border border-warm-100/50 inline-flex relative justify-self-center mx-auto max-w-fit">
             <select 
               value={activeCycleId} 
               onChange={handleCycleChange}
-              className="bg-warm-50 border border-warm-200 text-warm-700 text-sm rounded-lg focus:ring-warm-400 focus:border-warm-400 block p-2.5 outline-none font-medium cursor-pointer"
+              className="bg-white border border-warm-200 text-warm-700 text-sm rounded-lg focus:ring-warm-400 focus:border-warm-400 block p-2 outline-none font-medium cursor-pointer shadow-sm"
             >
               {cycles.map(c => (
                 <option key={c.id} value={c.id}>{c.name}</option>
@@ -60,16 +60,16 @@ const Home = () => {
             </select>
             <button 
               onClick={handleNewCycle}
-              className="text-sm bg-pastel-darkgreen/10 text-pastel-darkgreen hover:bg-pastel-darkgreen/20 px-4 py-2.5 rounded-lg font-medium transition-colors whitespace-nowrap"
+              className="text-sm bg-pastel-darkgreen text-white hover:bg-pastel-darkgreen/90 px-3 py-2 rounded-lg font-medium transition-colors whitespace-nowrap shadow-sm"
             >
               + Hành trình mới
             </button>
             <button
               onClick={handleDeleteCycle}
               title="Xóa hành trình này"
-              className="text-red-400 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 transition-colors sm:absolute sm:-right-12"
+              className="text-red-400 hover:text-red-600 hover:bg-red-50 p-2 rounded-lg transition-colors ml-1"
             >
-              <Trash2 size={20} />
+              <Trash2 size={18} />
             </button>
           </div>
         )}
