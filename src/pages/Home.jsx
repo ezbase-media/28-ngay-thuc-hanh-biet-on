@@ -13,7 +13,7 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {daysData.map((day) => {
           // Check if user has saved data for this day
           const savedData = localStorage.getItem(`gratitude_day_${day.id}`);
@@ -36,7 +36,7 @@ const Home = () => {
                 )}
               </div>
               
-              <h3 className="font-serif font-medium text-warm-800 text-lg mb-2 line-clamp-2 leading-snug flex-grow">
+              <h3 className="font-serif font-medium text-warm-800 text-lg mb-2 leading-snug flex-grow">
                 {day.title}
               </h3>
               
