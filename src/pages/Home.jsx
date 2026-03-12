@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { daysData } from '../data/days';
-import { BookHeart, CheckCircle2 } from 'lucide-react';
-import { initStorage, getCycles, getActiveCycle, setActiveCycle, createNewCycle, getDayData } from '../utils/storage';
+import { BookHeart, CheckCircle2, Trash2 } from 'lucide-react';
+import { initStorage, getCycles, getActiveCycle, setActiveCycle, createNewCycle, getDayData, deleteCycle } from '../utils/storage';
 
 const Home = () => {
   const [cycles, setCycles] = useState([]);
@@ -28,6 +28,17 @@ const Home = () => {
     }
   };
 
+  const handleDeleteCycle = () => {
+    const activeCycleName = cycles.find(c => c.id === activeCycleId)?.name || 'này';
+    if (window.confirm(`Bạn có chắc chắn muốn xóa vĩnh viễn hành trình "${activeCycleName}" và tất cả dữ liệu ghi chép trong hành trình này không? Hành động này không thể hoàn tác.`)) {
+      const newActiveId = deleteCycle(activeCycleId);
+      setCycles(getCycles());
+      if (newActiveId) {
+          setActiveCycleId(newActiveId);
+      }
+    }
+  };
+
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="text-center max-w-2xl mx-auto mb-12">
@@ -37,7 +48,7 @@ const Home = () => {
         </p>
         
         {cycles.length > 0 && (
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-warm-100 sm:inline-flex">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-white p-4 rounded-2xl shadow-sm border border-warm-100 sm:inline-flex relative">
             <select 
               value={activeCycleId} 
               onChange={handleCycleChange}
@@ -49,9 +60,16 @@ const Home = () => {
             </select>
             <button 
               onClick={handleNewCycle}
-              className="text-sm bg-pastel-darkgreen/10 text-pastel-darkgreen hover:bg-pastel-darkgreen/20 px-4 py-2.5 rounded-lg font-medium transition-colors"
+              className="text-sm bg-pastel-darkgreen/10 text-pastel-darkgreen hover:bg-pastel-darkgreen/20 px-4 py-2.5 rounded-lg font-medium transition-colors whitespace-nowrap"
             >
               + Hành trình mới
+            </button>
+            <button
+              onClick={handleDeleteCycle}
+              title="Xóa hành trình này"
+              className="text-red-400 hover:text-red-600 p-2 rounded-lg hover:bg-red-50 transition-colors sm:absolute sm:-right-12"
+            >
+              <Trash2 size={20} />
             </button>
           </div>
         )}

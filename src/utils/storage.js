@@ -75,3 +75,31 @@ export const saveDayData = (cycleId, dayId, content) => {
     };
     localStorage.setItem(`gratitude_c${cycleId}_d${dayId}`, JSON.stringify(data));
 };
+
+export const deleteCycle = (cycleId) => {
+    const cycles = getCycles();
+    const updatedCycles = cycles.filter(c => c.id !== cycleId);
+    
+    // Clear all day data associated with this cycle
+    for (let i = 1; i <= 28; i++) {
+        localStorage.removeItem(`gratitude_c${cycleId}_d${i}`);
+    }
+
+    // Save the updated cycles list
+    localStorage.setItem('gratitude_cycles', JSON.stringify(updatedCycles));
+
+    // If we deleted the active cycle, set a new active cycle
+    if (getActiveCycle() === cycleId) {
+        if (updatedCycles.length > 0) {
+            setActiveCycle(updatedCycles[0].id);
+            return updatedCycles[0].id;
+        } else {
+            // If no cycles left, re-initialize storage to create a fresh one
+            localStorage.removeItem('gratitude_cycles');
+            localStorage.removeItem('gratitude_active_cycle');
+            initStorage();
+            return 1;
+        }
+    }
+    return null; // Return null if the active cycle wasn't removed
+};
