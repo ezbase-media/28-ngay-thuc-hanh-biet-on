@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Camera, Check, Clock } from 'lucide-react';
+import { Camera, Check, Clock, Trash2 } from 'lucide-react';
 import { getActiveCycle } from '../../utils/storage';
 
 export const saveSpecialTaskData = (cycleId, dayId, fieldId, content) => {
@@ -72,6 +72,10 @@ const SpecialTaskBuilder = ({ config, dayId }) => {
       }
   };
 
+  const handleDeletePhoto = (fieldId) => {
+      handleChange(fieldId, '');
+  };
+
   const handleSave = () => {
       const newTimestamps = { ...timestamps };
       config.fields.forEach(field => {
@@ -132,10 +136,19 @@ const SpecialTaskBuilder = ({ config, dayId }) => {
                             {data[field.id] ? (
                                 <div className="space-y-4">
                                     <img src={data[field.id]} alt="Nhiệm màu" className="max-h-64 rounded-xl mx-auto shadow-sm object-cover" />
-                                    <label className="cursor-pointer inline-flex items-center text-sm font-medium text-warm-600 hover:text-warm-800 bg-warm-100 px-4 py-2 rounded-full transition-colors">
-                                        <Camera size={16} className="mr-2" /> Đổi ảnh khác
-                                        <input type="file" accept="image/*" onChange={(e) => handlePhotoUpload(field.id, e)} className="hidden" />
-                                    </label>
+                                    <div className="flex items-center justify-center gap-3 flex-wrap">
+                                        <label className="cursor-pointer inline-flex items-center text-sm font-medium text-warm-600 hover:text-warm-800 bg-warm-100 px-4 py-2 rounded-full transition-colors">
+                                            <Camera size={16} className="mr-2" /> Đổi ảnh khác
+                                            <input type="file" accept="image/*" onChange={(e) => handlePhotoUpload(field.id, e)} className="hidden" />
+                                        </label>
+                                        <button
+                                            type="button"
+                                            onClick={() => handleDeletePhoto(field.id)}
+                                            className="inline-flex items-center text-sm font-medium text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-full transition-colors"
+                                        >
+                                            <Trash2 size={16} className="mr-2" /> Xóa ảnh
+                                        </button>
+                                    </div>
                                 </div>
                             ) : (
                                 <label className="cursor-pointer flex flex-col items-center justify-center p-4">

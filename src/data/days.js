@@ -21,8 +21,12 @@ export const daysData = [
     specialTask: {
       title: 'Mối Quan Hệ Nhiệm Màu',
       fields: [
-        { id: 'relPhoto', type: 'photo', label: 'Tải ảnh 3 người thân thiết của bạn lên đây để lưu trữ (Không bắt buộc)' },
-        { id: 'relReasons', type: 'textarea', label: 'Viết ra 5 điều bạn cảm thấy biết ơn nhất về mỗi người:', placeholder: 'Cảm ơn [Tên] vì...' }
+        { id: 'rel1Photo', type: 'photo', label: '📷 Ảnh người thân thiết thứ 1 (Không bắt buộc)' },
+        { id: 'rel1Reasons', type: 'textarea', label: '✍️ 5 điều biết ơn về người thứ 1:', placeholder: 'Cảm ơn [Tên] vì...' },
+        { id: 'rel2Photo', type: 'photo', label: '📷 Ảnh người thân thiết thứ 2 (Không bắt buộc)' },
+        { id: 'rel2Reasons', type: 'textarea', label: '✍️ 5 điều biết ơn về người thứ 2:', placeholder: 'Cảm ơn [Tên] vì...' },
+        { id: 'rel3Photo', type: 'photo', label: '📷 Ảnh người thân thiết thứ 3 (Không bắt buộc)' },
+        { id: 'rel3Reasons', type: 'textarea', label: '✍️ 5 điều biết ơn về người thứ 3:', placeholder: 'Cảm ơn [Tên] vì...' }
       ]
     }
   },

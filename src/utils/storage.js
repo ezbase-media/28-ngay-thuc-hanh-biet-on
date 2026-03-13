@@ -80,10 +80,16 @@ export const deleteCycle = (cycleId) => {
     const cycles = getCycles();
     const updatedCycles = cycles.filter(c => c.id !== cycleId);
     
-    // Clear all day data associated with this cycle
-    for (let i = 1; i <= 28; i++) {
-        localStorage.removeItem(`gratitude_c${cycleId}_d${i}`);
+    // Clear ALL localStorage keys associated with this cycle (regular data + special task data)
+    const prefix = `gratitude_c${cycleId}_`;
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith(prefix)) {
+            keysToRemove.push(key);
+        }
     }
+    keysToRemove.forEach(key => localStorage.removeItem(key));
 
     // Save the updated cycles list
     localStorage.setItem('gratitude_cycles', JSON.stringify(updatedCycles));
@@ -103,3 +109,4 @@ export const deleteCycle = (cycleId) => {
     }
     return null; // Return null if the active cycle wasn't removed
 };
+
