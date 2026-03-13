@@ -134,19 +134,19 @@ const SpecialTaskBuilder = ({ config, dayId }) => {
                     {field.type === 'photo' && (
                         <div className="border-2 border-dashed border-warm-300 rounded-2xl p-6 bg-white text-center hover:bg-warm-50 transition-colors">
                             {data[field.id] ? (
-                                <div className="space-y-4">
-                                    <img src={data[field.id]} alt="Nhiệm màu" className="max-h-64 rounded-xl mx-auto shadow-sm object-cover" />
-                                    <div className="flex items-center justify-center gap-3 flex-wrap">
-                                        <label className="cursor-pointer inline-flex items-center text-sm font-medium text-warm-600 hover:text-warm-800 bg-warm-100 px-4 py-2 rounded-full transition-colors">
-                                            <Camera size={16} className="mr-2" /> Đổi ảnh khác
+                                <div className="space-y-3">
+                                    <img src={data[field.id]} alt="Nhiệm màu" className="w-full rounded-xl mx-auto shadow-sm object-contain" />
+                                    <div className="flex items-center justify-center gap-2">
+                                        <label className="cursor-pointer inline-flex items-center text-xs font-medium text-warm-600 hover:text-warm-800 bg-warm-100 px-3 py-1.5 rounded-full transition-colors">
+                                            <Camera size={14} className="mr-1" /> Đổi ảnh
                                             <input type="file" accept="image/*" onChange={(e) => handlePhotoUpload(field.id, e)} className="hidden" />
                                         </label>
                                         <button
                                             type="button"
                                             onClick={() => handleDeletePhoto(field.id)}
-                                            className="inline-flex items-center text-sm font-medium text-warm-600 hover:text-warm-800 bg-warm-100 px-4 py-2 rounded-full transition-colors"
+                                            className="inline-flex items-center text-xs font-medium text-warm-600 hover:text-warm-800 bg-warm-100 px-3 py-1.5 rounded-full transition-colors"
                                         >
-                                            <Trash2 size={16} className="mr-2" /> Xóa ảnh
+                                            <Trash2 size={14} className="mr-1" /> Xóa ảnh
                                         </button>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@ const SpecialTaskBuilder = ({ config, dayId }) => {
                                         <Camera size={24} />
                                     </div>
                                     <span className="font-medium text-warm-700">Tải ảnh lên</span>
-                                    <span className="text-sm text-warm-400 mt-1">Hỗ trợ JPG, PNG (Ảnh sẽ được lưu nội bộ trên trình duyệt)</span>
+                                    <span className="text-sm text-warm-400 mt-1">Hỗ trợ JPG, PNG (Ảnh sẽ lưu trữ nội bộ trên thiết bị)</span>
                                     <input type="file" accept="image/*" onChange={(e) => handlePhotoUpload(field.id, e)} className="hidden" />
                                 </label>
                             )}
