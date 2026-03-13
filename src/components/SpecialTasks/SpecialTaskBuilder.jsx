@@ -144,7 +144,7 @@ const SpecialTaskBuilder = ({ config, dayId }) => {
                                         <button
                                             type="button"
                                             onClick={() => handleDeletePhoto(field.id)}
-                                            className="inline-flex items-center text-sm font-medium text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 px-4 py-2 rounded-full transition-colors"
+                                            className="inline-flex items-center text-sm font-medium text-warm-600 hover:text-warm-800 bg-warm-100 px-4 py-2 rounded-full transition-colors"
                                         >
                                             <Trash2 size={16} className="mr-2" /> Xóa ảnh
                                         </button>

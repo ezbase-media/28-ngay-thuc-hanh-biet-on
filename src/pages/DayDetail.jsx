@@ -7,22 +7,12 @@ import { getDayData, saveDayData, getActiveCycle } from '../utils/storage';
 
 const renderInstruction = (text) => {
   if (!text) return null;
-  return text.split('\n').map((line, idx) => {
-    const parts = line.split(/(\*\*.*?\*\*|\*[^*]+\*)/g);
-    return (
-      <p key={idx} className="mb-3 text-warm-700 leading-relaxed md:text-lg">
-        {parts.map((part, i) => {
-          if (part.startsWith('**') && part.endsWith('**')) {
-            return <strong key={i} className="font-semibold text-warm-900">{part.slice(2, -2)}</strong>;
-          }
-          if (part.startsWith('*') && part.endsWith('*')) {
-            return <em key={i} className="italic text-warm-800">{part.slice(1, -1)}</em>;
-          }
-          return part;
-        })}
-      </p>
-    );
-  });
+  return (
+    <div 
+      className="text-warm-700 leading-relaxed md:text-lg prose prose-warm max-w-none"
+      dangerouslySetInnerHTML={{ __html: text }}
+    />
+  );
 };
 
 const DayDetail = () => {
